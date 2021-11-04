@@ -4,7 +4,7 @@
  * @Date: 2021-11-03 19:36:24
  * @Url: https://u.mr90.top
  * @github: https://github.com/rr210
- * @LastEditTime: 2021-11-04 14:01:15
+ * @LastEditTime: 2021-11-04 14:15:00
  * @LastEditors: Harry
 -->
 <template>
@@ -19,7 +19,7 @@
 import CONFIG from '@/config/index.js'
 import RightTop from '../github/RightTop.vue'
 import ThemeChange from '../github/ThemeChange.vue'
-const { COLORLIST } = CONFIG
+const { COLORLIST, USERNAME } = CONFIG
 export default {
   components: { RightTop, ThemeChange },
   name: 'Github',
@@ -49,8 +49,8 @@ export default {
     window.removeEventListener('resize', this.screenAdapter)
   },
   mounted() {
-    const username = window.location.search.split('=')[1]
-    this.username = username
+    // const username = window.location.search.split('=')[1]
+    // this.username = username
     this.getData()
     this.initChart()
     window.addEventListener('resize', this.screenAdapter)
@@ -186,7 +186,7 @@ export default {
     },
     // 对数据进行分隔，获取今日的时间
     async getData() {
-      const { data: res } = await this.$http.get(this.username)
+      const { data: res } = await this.$http.get(USERNAME)
       const data = []
       this.data_list = res.contributions.slice(5)
       this.data_list.forEach((v, i) => {

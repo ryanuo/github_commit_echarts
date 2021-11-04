@@ -6,28 +6,7 @@
 
 ## 使用方法
 
-> http://localhost:8080/api?username=你的GitHub用户名
-
-## Project setup
-
-```
-npm install
-```
-
-### Compiles and hot-reloads for development
-
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-
-```
-npm run build
-```
-
-### Lints and fixes files
-
-```
-npm run lint
-```
+1. 修改配置文件`src`中的`config`下的`USERNAME`改为你的个人GitHub用户名
+2. `npm install`  安装依赖包
+3. `npm run serve`  本地测试
+4. `npm run build`  打包生成静态文件

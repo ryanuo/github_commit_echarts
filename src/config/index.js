@@ -4,10 +4,11 @@
  * @Date: 2021-11-03 22:36:15
  * @Url: https://u.mr90.top
  * @github: https://github.com/rr210
- * @LastEditTime: 2021-11-04 13:27:15
+ * @LastEditTime: 2021-11-04 14:14:50
  * @LastEditors: Harry
  */
 const CONFIG = {
+  USERNAME: 'rr210',
   COLORLIST: {
     theme1: [
       '#ebedf0',
