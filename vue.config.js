@@ -11,5 +11,13 @@ module.exports = {
         '@': path.resolve(__dirname, './src')
       }
     }
+  },
+  chainWebpack: config => {
+    config
+      .plugin('html')
+      .tap(args => {
+        args[0].title = 'Github-commit提交数据可视化3D'
+        return args
+      })
   }
 }
