@@ -6,7 +6,7 @@
 
 ## 使用方法
 
-> https://m.mr90.top/github_commit_echarts/api?username=你的GitHub用户名
+> http://localhost:8080/api?username=你的GitHub用户名
 
 ## Project setup
 

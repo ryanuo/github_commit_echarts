@@ -4,7 +4,7 @@
  * @Date: 2021-11-03 19:36:24
  * @Url: https://u.mr90.top
  * @github: https://github.com/rr210
- * @LastEditTime: 2021-11-04 13:28:27
+ * @LastEditTime: 2021-11-04 14:01:15
  * @LastEditors: Harry
 -->
 <template>
@@ -34,7 +34,6 @@ export default {
         'Thursday',
         'Friday',
         'Saturday'
-        // 'Sunday'
       ],
       months: [],
       data: [],
