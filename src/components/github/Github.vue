@@ -4,7 +4,7 @@
  * @Date: 2021-11-03 19:36:24
  * @Url: https://u.mr90.top
  * @github: https://github.com/rr210
- * @LastEditTime: 2021-11-04 14:15:00
+ * @LastEditTime: 2021-11-04 16:00:11
  * @LastEditors: Harry
 -->
 <template>
@@ -258,7 +258,7 @@ export default {
     },
     // 屏幕的适配
     screenAdapter() {
-      this.titleFontSize = (this.$refs.githubRef.offsetWidth / 100) * 3.6
+      this.titleFontSize = this.$refs.githubRef.offsetWidth
       const adapterOption = {}
       this.ChartsInstance.setOption(adapterOption)
       this.ChartsInstance.resize()

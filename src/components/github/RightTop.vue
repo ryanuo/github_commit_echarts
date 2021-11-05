@@ -4,7 +4,7 @@
  * @Date: 2021-11-04 11:52:24
  * @Url: https://u.mr90.top
  * @github: https://github.com/rr210
- * @LastEditTime: 2021-11-04 13:08:14
+ * @LastEditTime: 2021-11-04 19:57:32
  * @LastEditors: Harry
 -->
 <template>
@@ -12,6 +12,7 @@
     <a
       href="https://github.com/Rr210/github_commit_echarts"
       class="github-corner"
+      target="_blank"
       aria-label="View source on GitHub"
       ><svg
         width="100"
