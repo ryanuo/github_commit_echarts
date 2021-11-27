@@ -6,7 +6,7 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "gh":"gh-pages -d dist"
+    "gh": "gh-pages -d dist"
   },
   "dependencies": {
     "axios": "^0.24.0",

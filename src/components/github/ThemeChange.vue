@@ -4,7 +4,7 @@
  * @Date: 2021-11-04 12:38:53
  * @Url: https://u.mr90.top
  * @github: https://github.com/rr210
- * @LastEditTime: 2021-11-04 13:20:32
+ * @LastEditTime: 2021-11-11 21:15:49
  * @LastEditors: Harry
 -->
 <template>
@@ -22,7 +22,7 @@
 </template>
 
 <script>
-import CONFIG from '@/config/index.js'
+import CONFIG from '@/assets/js/index.js'
 export default {
   data() {
     return {

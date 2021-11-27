@@ -4,22 +4,28 @@
  * @Date: 2021-11-03 19:36:24
  * @Url: https://u.mr90.top
  * @github: https://github.com/rr210
- * @LastEditTime: 2021-11-04 16:00:11
+ * @LastEditTime: 2021-11-27 19:43:39
  * @LastEditors: Harry
 -->
 <template>
   <div class="container-github">
     <div class="github_w" ref="githubRef"></div>
+    <div class="input_name">
+      <input :style="outStyle" type="text" placeholder="请输入Github用户名" v-model="Username" />
+      <button @click="changeUsername" :style="btnStyle">切换</button>
+    </div>
     <right-top></right-top>
     <theme-change @theme="getTheme"></theme-change>
   </div>
 </template>
 
 <script>
-import CONFIG from '@/config/index.js'
-import RightTop from '../github/RightTop.vue'
-import ThemeChange from '../github/ThemeChange.vue'
-const { COLORLIST, USERNAME } = CONFIG
+import CONFIG from '@/assets/js/index.js'
+import RightTop from '@/components/github/RightTop.vue'
+import ThemeChange from '@/components/github/ThemeChange.vue'
+// 加入防抖操作
+import { debounce } from '@/plugin/debounce.js'
+const { COLORLIST } = CONFIG
 export default {
   components: { RightTop, ThemeChange },
   name: 'Github',
@@ -39,7 +45,24 @@ export default {
       data: [],
       titleFontSize: 0,
       data_list: [],
-      theme: 'theme1'
+      theme: 'theme1',
+      query: '',
+      Username: 'rr210'
+
+    }
+  },
+  computed: {
+    btnStyle() {
+      return {
+        backgroundColor: COLORLIST[`${this.theme}`][5],
+        borderColor: COLORLIST[`${this.theme}`][5]
+      }
+    },
+    outStyle() {
+      return {
+        outlineColor: COLORLIST[`${this.theme}`][5],
+        border: `1px solid ${COLORLIST[`${this.theme}`][4]}`
+      }
     }
   },
   created() {
@@ -186,7 +209,7 @@ export default {
     },
     // 对数据进行分隔，获取今日的时间
     async getData() {
-      const { data: res } = await this.$http.get(USERNAME)
+      const { data: res } = await this.$http.get(this.Username)
       const data = []
       this.data_list = res.contributions.slice(5)
       this.data_list.forEach((v, i) => {
@@ -263,6 +286,10 @@ export default {
       this.ChartsInstance.setOption(adapterOption)
       this.ChartsInstance.resize()
     },
+    // 点击按钮时切换用户
+    changeUsername: debounce(function () {
+      this.getData()
+    }, 3000, true),
     // 主题的切换
     getTheme(e) {
       this.theme = e
@@ -280,6 +307,52 @@ export default {
   .github_w {
     width: 100%;
     height: 100%;
+  }
+}
+.com_i_b {
+  box-sizing: border-box;
+  height: 100%;
+  font-size: 15px;
+  vertical-align: middle;
+  cursor: pointer;
+}
+.input_name {
+  position: absolute;
+  top: 5%;
+  left: 5%;
+  width: 250px;
+  height: 30px;
+  input {
+    width: 170px;
+    -webkit-appearance: none;
+    background-color: #fff;
+    background-image: none;
+    border-radius: 4px;
+    box-sizing: border-box;
+    color: #606266;
+    display: inline-block;
+    font-size: inherit;
+    line-height: 30px;
+    padding: 0 15px;
+    transition: border-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+    .com_i_b;
+  }
+  button {
+    margin-left: 10px;
+    white-space: nowrap;
+    border: 1px solid #dcdfe6;
+    color: #606266;
+    // -webkit-appearance: none;
+    text-align: center;
+    box-sizing: border-box;
+    outline: none;
+    transition: 0.1s;
+    font-weight: 500;
+    padding: 0px 10px;
+    font-size: 14px;
+    border-radius: 4px;
+    color: #fff;
+    .com_i_b;
   }
 }
 </style>

@@ -1,13 +1,14 @@
 <template>
-  <div>
-    <github />
+  <div id="app">
+    <github-vue></github-vue>
   </div>
 </template>
 
 <script>
-import Github from '@/components/github/Github.vue'
+import GithubVue from '@/components/github/Github.vue'
 export default {
-  components: { Github }
+  name: 'App',
+  components: { GithubVue }
 }
 </script>
 
