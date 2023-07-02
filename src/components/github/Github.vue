@@ -4,8 +4,8 @@
  * @Date: 2021-11-03 19:36:24
  * @Url: https://u.mr90.top
  * @github: https://github.com/rr210
- * @LastEditTime: 2021-11-27 19:43:39
- * @LastEditors: Harry
+ * @LastEditTime: 2023-07-02 20:52:26
+ * @LastEditors: harry
 -->
 <template>
   <div class="container-github">
@@ -209,7 +209,7 @@ export default {
     },
     // 对数据进行分隔，获取今日的时间
     async getData() {
-      const { data: res } = await this.$http.get(this.Username)
+      const { data: res } = await this.$http.get(`api/?${this.Username}`)
       const data = []
       this.data_list = res.contributions.slice(5)
       this.data_list.forEach((v, i) => {
@@ -232,7 +232,7 @@ export default {
       const updateOption = {
         series: [
           {
-            data: this.data.map(function (item) {
+            data: this.data.map(function(item) {
               return {
                 value: item.value,
                 dateList: item.date
@@ -287,7 +287,7 @@ export default {
       this.ChartsInstance.resize()
     },
     // 点击按钮时切换用户
-    changeUsername: debounce(function () {
+    changeUsername: debounce(function() {
       this.getData()
     }, 3000, true),
     // 主题的切换
@@ -304,11 +304,13 @@ export default {
 .container-github {
   width: 100%;
   height: 100vh;
+
   .github_w {
     width: 100%;
     height: 100%;
   }
 }
+
 .com_i_b {
   box-sizing: border-box;
   height: 100%;
@@ -316,12 +318,14 @@ export default {
   vertical-align: middle;
   cursor: pointer;
 }
+
 .input_name {
   position: absolute;
   top: 5%;
   left: 5%;
   width: 250px;
   height: 30px;
+
   input {
     width: 170px;
     -webkit-appearance: none;
@@ -337,6 +341,7 @@ export default {
     transition: border-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
     .com_i_b;
   }
+
   button {
     margin-left: 10px;
     white-space: nowrap;
