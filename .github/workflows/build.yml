@@ -20,6 +20,8 @@ jobs:
 
     - name: Node Build
       run: |
+        git config --global user.name "ryanuo"
+        git config --global user.email "1577791638@qq.com"
         npm i
         npm run build
         npm run gh
