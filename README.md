@@ -2,7 +2,7 @@
 
 ## 实例图
 
-![](https://cdn.jsdelivr.net/gh/Rr210/image@master/hexo/api/dawwadawddaw131.gif)
+![](https://cdn.jsdelivr.net/gh/ryanuo/image@master/hexo/api/dawwadawddaw131.gif)
 
 ## 使用方法
 

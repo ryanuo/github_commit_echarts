@@ -3,7 +3,7 @@
  * @Author: Harry
  * @Date: 2021-11-03 19:36:24
  * @Url: https://u.mr90.top
- * @github: https://github.com/rr210
+ * @github: https://github.com/ryanuo
  * @LastEditTime: 2023-07-02 20:52:26
  * @LastEditors: harry
 -->
@@ -47,7 +47,7 @@ export default {
       data_list: [],
       theme: 'theme1',
       query: '',
-      Username: 'rr210'
+      Username: 'ryanuo'
 
     }
   },
@@ -209,7 +209,7 @@ export default {
     },
     // 对数据进行分隔，获取今日的时间
     async getData() {
-      const { data: res } = await this.$http.get(`api/?${this.Username}`)
+      const { data: res } = await this.$http.get(`api?user=${this.Username}`)
       const data = []
       this.data_list = res.contributions.slice(5)
       this.data_list.forEach((v, i) => {

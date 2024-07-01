@@ -2,7 +2,7 @@
  * @Author: Harry
  * @Date: 2023-07-02 20:10:17
  * @LastEditors: harry
- * @Github: https://github.com/rr210
+ * @Github: https://github.com/ryanuo
  * @LastEditTime: 2023-07-02 20:52:09
  * @FilePath: \github_commit_echarts\src\main.js
  */
