@@ -1,4 +1,4 @@
-name: Generate Cover and Save Result
+name: Build
 
 on:
   push:
